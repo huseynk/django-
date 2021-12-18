@@ -1,3 +1,3 @@
 # django-
 
-In this repository a small project in jangoda was done.
+In this repository a small project was made in django.
