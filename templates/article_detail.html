@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+        <div class="container-fluid">
+            <div class="card" >
+                <div class="card-body">
+                    {%  if object.photo %}
+                        <img class="card-img-top" src="{{ object.photo.url }}" alt="{{ object.title }}">
+                    {% endif %}
+                    <h1 class="card-title">{{ object.title }}</h1>
+                    <h6 class="card-subtitle mb-2 text-muted">Muallif: {{ object.author }} | {{ object.date }}</h6>
+                    <p class="card-text">{{ object.text }}</p>
+                </div>
+                <a href="{% url 'article_list' %}" class="card-body">Barcha postlar</a>
+            </div>
+        </div>
+    {% endblock content %}
+</body>
+</html>

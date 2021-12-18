@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}angi Post{% endblock title %}</title>
+</head>
+<body>
+    {% block content %}
+    <h1>Yangi Post</h1>
+    <form action="" enctype="multipart/form-data" method="post">{%csrf_token %}
+        {{ form.media }}
+        {{ form|crispy }}
+        <input type="submit" class="btn btn-danger" value="Saqlash">
+    </form>
+    {% endblock content %}
+</body>
+</html>
